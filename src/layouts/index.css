@@ -1,6 +1,7 @@
 :root {
   --text: black;
-  --base: 1rem;
+  --base: 16px;
+  --base-mobile: 10px;
 }
 
 * {
@@ -22,6 +23,16 @@ html {
   padding: 0;
 
   color: var(--text);
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  body,
+  html {
+    font-size: var(--base-mobile);
+  }
 }
 
 a {

@@ -21,11 +21,13 @@ const HomeWrapper = styled.div`
   h1 {
     font-size: 5rem;
     font-weight: 400;
+    text-align: center;
   }
   h2 {
     font-size: 2rem;
     font-weight: 400;
     font-style: italic;
+    text-align: center;
   }
 
 `;
