@@ -1,20 +1,37 @@
 [
   {
-    "type": "work",
     "title": "Developer",
     "company": "Spindox Spa",
-    "startDate": "2018-01-20"
+    "startDate": "2015-07-07",
+    "endDate": "",
+    "location": "Milan, Italy",
+    "description": "Is simply dummy text of the printing and typesetting industry.",
+    "activities": [
+      "development of cross-device hybrid mobile apps and single page web applications",
+      "management of iOS and Android releases",
+      "REST APIs development and implementation"
+    ],
+    "techs": ["ReactJS", "Redux", "Immutable", "Saga", "Webpack", "Cordova", "Node", "Express", "SCSS", "Jest", "Electron", "AngularJS", "Ionic"]
   },
   {
-    "type": "work",
     "title": "Developer Jr",
     "company": "Spindox Spa",
-    "startDate": "2018-01-20"
+    "startDate": "2015-01-07",
+    "endDate": "2015-07-06",
+    "location": "Milan, Italy",
+    "description": "Is simply dummy text of the printing and typesetting industry.",
+    "activities": [
+      "maintenance and development of user interfaces for single page web applications",
+      "development of static UI templates"
+    ],
+    "techs": ["MithrilJS", "VueJS", "Handlebars", "Less", "Gulp"]
   },
   {
-    "type": "work",
     "title": "Sales and Marketing intern",
     "company": "Goldenmoments",
-    "startDate": "2018-01-20"
+    "startDate": "2013-01-01",
+    "endDate": "2013-06-06",
+    "location": "Portsmouth, United Kingdom",
+    "description": "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   }
 ]

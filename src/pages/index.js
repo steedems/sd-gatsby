@@ -1,20 +1,18 @@
 import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 import { scale } from '../utils/typography';
 
 import Icon from '../components/Icon';
-
-function open(link, target = '_blank') {
-  return window.open(link, target);
-}
+import { media } from '../utils/styles';
 
 const HomeWrapper = styled.div`
 
   height: 100vh;
   width: 100vw;
-  background: lightblue;
+  background: #dfeaf1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,49 +20,41 @@ const HomeWrapper = styled.div`
   
   h1 {
     ${{ ...scale(2.5) }}
+    ${media.phone`${{ ...scale(1.75) }}`}
     text-align: center;
   }
   h2 {
     ${{ ...scale(1.25) }}
-    font-weight: 400;
-    font-style: italic;
+    ${media.phone`${{ ...scale(0.75) }}`}
     text-align: center;
   }
 
 `;
 
-const Links = styled.div`
+const ToResume = styled(Link)`
 
-  margin-top: 24px;
+  text-shadow: none;
+  background-image: none;
+  ${{ ...scale(1) }}
+  padding-top: 24px;
+  cursor: pointer;
+  color: inherit;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
 
 `;
 
 const IndexPage = ({ data }) => {
   const {
-    name, title, linkedIn, twitter, github, email,
+    name, title,
   } = data.profileJson;
   return (
     <HomeWrapper>
       <h1>{name}</h1>
       <h2>{title}</h2>
-      <Links>
-        <Icon onClick={() => open({ linkedIn })} name="icon-linkedin" size={2} />
-        <Icon onClick={() => open(twitter)} name="icon-twitter" size={2} />
-        <Icon onClick={() => open({ github })} name="icon-github" size={2} />
-        <Icon
-          onClick={() => open({ email }, '_top')}
-          name="icon-envelope-o"
-          size={2}
-        />
-      </Links>
+      <ToResume to="/resume">
+        <Icon name="icon-drivers-license-o" size={2} />
+        <Icon name="icon-angle-right" />
+      </ToResume>
     </HomeWrapper>
   );
 };
@@ -83,10 +73,6 @@ export const pageQuery = graphql`
     profileJson {
       name
       title
-      linkedIn
-      twitter
-      github
-      email
     } 
   }
 `;
