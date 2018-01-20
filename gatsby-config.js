@@ -4,5 +4,5 @@ module.exports = {
     description: 'Developer and sea lover :sailboat:',
     keywords: 'stefano demurtas, developer',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
 };
