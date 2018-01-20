@@ -9,10 +9,8 @@ import styled from 'styled-components';
 const IconWrapper = styled.div`
 
   font-size: ${props => props.size}rem;
-  
   margin: 12px;
-  
-  cursor: ${props => (props.onClick ? 'pointer' : 'initial')}
+  cursor: pointer;
 
 `;
 
