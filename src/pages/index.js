@@ -1,12 +1,14 @@
 import React from 'react';
-
+import PropType from 'prop-types';
 import styled from 'styled-components';
+
+import { scale } from '../utils/typography';
+
+import Icon from '../components/Icon';
 
 function open(link, target = '_blank') {
   return window.open(link, target);
 }
-
-import Icon from '../components/Icon';
 
 const HomeWrapper = styled.div`
 
@@ -19,12 +21,11 @@ const HomeWrapper = styled.div`
   flex-direction: column;
   
   h1 {
-    font-size: 5rem;
-    font-weight: 400;
+    ${{ ...scale(2.5) }}
     text-align: center;
   }
   h2 {
-    font-size: 2rem;
+    ${{ ...scale(1.25) }}
     font-weight: 400;
     font-style: italic;
     text-align: center;
@@ -46,18 +47,46 @@ const Links = styled.div`
 
 `;
 
-const IndexPage = () => (
-  <HomeWrapper>
-    <h1>stefano demurtas</h1>
-    <h2>developer and sea lover <span role="img">⛵</span></h2>
-    <Links>
-      <Icon onClick={() => open('https://www.linkedin.com/in/stefanodemurtas')} name="icon-linkedin" size={2} />
-      <Icon onClick={() => open('https://twitter.com/steedems')} name="icon-twitter" size={2} />
-      <Icon onClick={() => open('https://github.com/steedems')} name="icon-github" size={2} />
-      <Icon onClick={() => open('mailto:st.demurtas@gmail.com?Subject=Hi there!', '_top')} name="icon-envelope-o" size={2} />
-    </Links>
-  </HomeWrapper>
-);
+const IndexPage = ({ data }) => {
+  const {
+    name, title, linkedIn, twitter, github, email,
+  } = data.profileJson;
+  return (
+    <HomeWrapper>
+      <h1>{name}</h1>
+      <h2>{title}</h2>
+      <Links>
+        <Icon onClick={() => open({ linkedIn })} name="icon-linkedin" size={2} />
+        <Icon onClick={() => open(twitter)} name="icon-twitter" size={2} />
+        <Icon onClick={() => open({ github })} name="icon-github" size={2} />
+        <Icon
+          onClick={() => open({ email }, '_top')}
+          name="icon-envelope-o"
+          size={2}
+        />
+      </Links>
+    </HomeWrapper>
+  );
+};
+
+
+IndexPage.propTypes = {
+  data: PropType.object,
+};
 
 
 export default IndexPage;
+
+
+export const pageQuery = graphql`
+  query IndexPage {
+    profileJson {
+      name
+      title
+      linkedIn
+      twitter
+      github
+      email
+    } 
+  }
+`;

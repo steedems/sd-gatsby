@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import typography from '../utils/typography';
+
 import './index.css';
 import '../assets/font-awesome/style.css';
+
+typography.injectStyles();
 
 class TemplateWrapper extends React.PureComponent {
   render() {
