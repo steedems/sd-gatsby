@@ -6,17 +6,19 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
 
-import { scale, rhythm } from '../../utils/typography';
+import {rhythm, scale} from '../../utils/typography';
 import { media } from '../../utils/styles';
 
-const ExperienceWrapper = styled.div`
+const EducationWrapper = styled.div`
+
   padding: 24px 0;
+
 `;
 const Head = styled.div`
 
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 24px;
+  flex-direction: column;
+  padding-bottom: 8px;
   ${media.phone`
     flex-direction: column;
     align-items: flex-start;
@@ -29,14 +31,15 @@ const Title = styled.h2`
 
   margin: 0;
   margin-right: 24px;
-  font-size: ${rhythm(1.5)};
-  line-height: ${rhythm(1.5)};
-
-`;
-const Company = styled.div`
-
   font-size: ${rhythm(1)};
   line-height: ${rhythm(1)};
+  padding-bottom: 12px;
+
+`;
+const School = styled.div`
+
+  font-size: ${rhythm(0.75)};
+  line-height: ${rhythm(0.75)};
 
 `;
 const SubTitle = styled.div`
@@ -53,30 +56,19 @@ const Date = styled.div`
 `;
 
 const Location = styled.div``;
-const Techs = styled.div`display: flex;`;
-const Tech = styled.div`
-  padding-right: 12px;
-  float: left;
-`;
-const TechsList = styled.div``;
-const Activities = styled.div`
-  padding-bottom: 24px;
-`;
 
-function Experience({
+function Education({
   title,
-  company,
+  school,
   startDate,
   endDate,
   location,
-  activities,
-  techs,
 }) {
   return (
-    <ExperienceWrapper>
+    <EducationWrapper>
       <Head>
         <Title>{title}</Title>
-        <Company>{company}</Company>
+        <School>{school}</School>
       </Head>
       <Location>{location}</Location>
       <SubTitle>
@@ -84,22 +76,13 @@ function Experience({
         <Date>-</Date>
         <Date>{endDate || 'Present'}</Date>
       </SubTitle>
-      {activities &&
-      <Activities>
-        Main activities:
-        {activities.map(activity => (<div key={activity}>- {activity}</div>))}
-      </Activities>}
-      {techs &&
-        <Techs>
-          <TechsList>{techs.map(tech => (<Tech key={tech}>{tech}</Tech>))}</TechsList>
-        </Techs>}
-    </ExperienceWrapper>
+    </EducationWrapper>
   );
 }
 
-Experience.propTypes = {
+Education.propTypes = {
   title: PropType.string,
-  company: PropType.string,
+  school: PropType.string,
   startDate: PropType.string,
   endDate: PropType.string,
   location: PropType.string,
@@ -107,4 +90,4 @@ Experience.propTypes = {
   techs: PropType.array,
 };
 
-export default Experience;
+export default Education;

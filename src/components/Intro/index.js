@@ -23,8 +23,7 @@ const IntroWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   
-  min-height: 30vh;
- 
+  padding: 24px 0; 
 
 `;
 const Name = styled.h1`

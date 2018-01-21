@@ -7,7 +7,9 @@ import PropType from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import Experience from '../components/Experience';
+import Education from '../components/Education';
 import Intro from '../components/Intro';
+import Section from '../components/Section';
 
 import { media } from '../utils/styles';
 
@@ -42,7 +44,8 @@ const ExperiencesWrapper = styled.div`
 
 class Resume extends React.PureComponent {
   render() {
-    const { edges } = this.props.data.allExperienceJson;
+    const { edges: careers } = this.props.data.allExperienceJson;
+    const { edges: education } = this.props.data.allEducationJson;
     const { profileJson } = this.props.data;
     return (
       <ResumeWrapper>
@@ -50,7 +53,12 @@ class Resume extends React.PureComponent {
           <Intro {...profileJson} />
         </IntroWrapper>
         <ExperiencesWrapper>
-          {edges.map((edge, index) => <Experience key={index} {...edge.node} />)}
+          <Section title="work experience">
+            {careers.map((edge, index) => <Experience key={index} {...edge.node} />)}
+          </Section>
+          <Section title="education">
+            {education.map((edge, index) => <Education key={index} {...edge.node} />)}
+          </Section>
         </ExperiencesWrapper>
       </ResumeWrapper>
     );
@@ -81,6 +89,17 @@ export const pageQuery = graphql`
           location
           activities
           techs
+        }
+      }
+    }
+    allEducationJson {
+      edges {
+        node {
+          title
+          school
+          startDate(formatString: "MMMM YYYY")
+          endDate(formatString: "MMMM YYYY")
+          location
         }
       }
     }

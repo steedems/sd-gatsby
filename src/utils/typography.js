@@ -6,8 +6,9 @@ import Typography from 'typography';
 import fairyGates from 'typography-theme-fairy-gates';
 
 const theme = Object.assign({}, fairyGates, {
-  baseFontSize: '20px',
+  baseFontSize: '18px',
   baseLineHeight: 1.45,
+  scaleRatio: 1.65,
   googleFonts: [
     {
       name: 'Work Sans',
