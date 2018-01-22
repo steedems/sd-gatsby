@@ -11,7 +11,7 @@ import { media } from '../../utils/styles';
 
 const EducationWrapper = styled.div`
 
-  padding: 24px 0;
+  padding: 24px 0 48px 0;
 
 `;
 const Head = styled.div`
@@ -43,10 +43,7 @@ const School = styled.div`
 
 `;
 const SubTitle = styled.div`
-  display: flex;
-  padding-bottom: 24px;
-  
-  
+  display: flex;  
 `;
 const Date = styled.div`
   

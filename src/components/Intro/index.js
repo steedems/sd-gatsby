@@ -29,7 +29,7 @@ const IntroWrapper = styled.div`
 const Name = styled.h1`
 
   margin: 0;
-  ${{ ...scale(1.5) }}
+  ${{ ...scale(2) }}
 
 `;
 

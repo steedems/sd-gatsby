@@ -6,13 +6,13 @@ import Link from 'gatsby-link';
 import { scale } from '../utils/typography';
 
 import Icon from '../components/Icon';
-import { media } from '../utils/styles';
+import { media, colors } from '../utils/styles';
 
 const HomeWrapper = styled.div`
 
   height: 100vh;
   width: 100vw;
-  background: #dfeaf1;
+  background: ${colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;

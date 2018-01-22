@@ -5,6 +5,8 @@
 import Typography from 'typography';
 import fairyGates from 'typography-theme-fairy-gates';
 
+import { colors } from './styles';
+
 const theme = Object.assign({}, fairyGates, {
   baseFontSize: '18px',
   baseLineHeight: 1.45,
@@ -33,8 +35,8 @@ const theme = Object.assign({}, fairyGates, {
     'Quattrocento Sans',
     'serif',
   ],
-  headerColor: 'rgba(64,64,64,1)',
-  bodyColor: 'rgba(64,64,64,.9)',
+  headerColor: colors.headerColor,
+  bodyColor: colors.bodyColor,
   headerWeight: '400',
   bodyWeight: 400,
   boldWeight: 700,

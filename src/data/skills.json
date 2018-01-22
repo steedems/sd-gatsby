@@ -1,0 +1,132 @@
+[
+  {
+    "label": "Javascript",
+    "level": 90,
+    "type": "tech"
+  },
+  {
+    "label": "NodeJS",
+    "level": 75,
+    "type": "tech"
+  },
+  {
+    "label": "ReactJS",
+    "level": 80,
+    "type": "tech"
+  },
+  {
+    "label": "Cordova",
+    "level": 80,
+    "type": "tech"
+  },
+  {
+    "label": "Ionic 1",
+    "level": 35,
+    "type": "tech"
+  },
+  {
+    "label": "Redux",
+    "level": 75,
+    "type": "tech"
+  },
+  {
+    "label": "Saga",
+    "level": 65,
+    "type": "tech"
+  },
+  {
+    "label": "Java",
+    "level": 20,
+    "type": "tech"
+  },
+  {
+    "label": "PHP",
+    "level": 20,
+    "type": "tech"
+  },
+  {
+    "label": "Docker",
+    "level": 30,
+    "type": "tech"
+  },
+  {
+    "label": "SCSS",
+    "level": 65,
+    "type": "tech"
+  },
+  {
+    "label": "AngularJS",
+    "level": 40,
+    "type": "tech"
+  },
+  {
+    "label": "Laravel Framework",
+    "level": 20,
+    "type": "tech"
+  },
+  {
+    "label": "Less",
+    "level": 70,
+    "type": "tech"
+  },
+  {
+    "label": "GraphQL",
+    "level": 25,
+    "type": "tech"
+  },
+  {
+    "label": "Webpack",
+    "level": 60,
+    "type": "tech"
+  },
+  {
+    "label": "Git",
+    "level": 80,
+    "type": "tool"
+  },
+  {
+    "label": "JetBrains (Webstorm)",
+    "level": 75,
+    "type": "tool"
+  },
+  {
+    "label": "Xcode",
+    "level": 65,
+    "type": "tool"
+  },
+  {
+    "label": "Jira",
+    "level": 70,
+    "type": "tool"
+  },
+  {
+    "label": "BitBucket",
+    "level": 75,
+    "type": "tool"
+  },
+  {
+    "label": "Adobe Photoshop",
+    "level": 25,
+    "type": "tool"
+  },
+  {
+    "label": "Adobe Illustrator",
+    "level": 30,
+    "type": "tool"
+  },
+  {
+    "label": "Italian (Native)",
+    "level": 100,
+    "type": "language"
+  },
+  {
+    "label": "English",
+    "level": 85,
+    "type": "language"
+  },
+  {
+    "label": "Spanish",
+    "level": 20,
+    "type": "language"
+  }
+]
