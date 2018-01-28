@@ -14,9 +14,9 @@ const IconWrapper = styled.div`
 
 `;
 
-function Icon({ size, name, onClick }) {
+function Icon({ size, name, onClick, className }) {
   return (
-    <IconWrapper onClick={onClick} size={size}><i className={name} /></IconWrapper>
+    <IconWrapper onClick={onClick} size={size} className={className}><i className={name} /></IconWrapper>
   );
 }
 
@@ -24,6 +24,7 @@ Icon.propTypes = {
   size: PropTypes.number,
   name: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Icon;

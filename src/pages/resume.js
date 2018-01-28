@@ -139,8 +139,13 @@ export const pageQuery = graphql`
           endDate(formatString: "MMMM YYYY")
           description
           location
-          activities
           techs
+          projects {
+            industry
+            client
+            description
+            technologies
+          }
         }
       }
     }

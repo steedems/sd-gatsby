@@ -4,7 +4,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../../utils/styles';
+import { colors, media } from '../../utils/styles';
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -22,10 +22,14 @@ const Skill = styled.div`
   
   &:nth-child(even) {
     padding-left: 24px;
+    ${media.phone`padding-left: 0;`}
   }
   &:nth-child(odd) {
     padding-right: 24px;
+    ${media.phone`padding-right: 0;`}
   }
+  
+  ${media.phone`flex: 1 1 100%;`}
 
 `;
 const Label = styled.div`

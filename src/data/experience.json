@@ -5,13 +5,57 @@
     "startDate": "2015-07-07",
     "endDate": "",
     "location": "Milan, Italy",
-    "description": "Is simply dummy text of the printing and typesetting industry.",
+    "description": "As a member of the Digital Solutions team in Spindox I have the chance to develop web applications for mobile (with Cordova), desktop (with Electron) and browsers. \nBesides taking care of planning, implementing and maintaining projects’ main features I am also often in charge of managing releases (Android + iOS) and take care of the integration of native features (such as push notifications).\nEven if I have worked a lot more on frontend, I am often in charge of design and development of REST APIs and integration with third party services.",
     "activities": [
       "development of cross-device hybrid mobile apps and single page web applications",
       "management of iOS and Android releases",
       "REST APIs development and implementation"
     ],
-    "techs": ["ReactJS", "Redux", "Immutable", "Saga", "Webpack", "Cordova", "Node", "Express", "SCSS", "Jest", "Electron", "AngularJS", "Ionic"]
+    "techs": ["ReactJS", "Redux", "styled-components", "Immutable", "Saga", "Webpack", "Cordova", "Node", "Express", "SCSS", "Jest", "Electron", "AngularJS", "Ionic"],
+    "projects": [
+      {
+        "industry": "Automotive",
+        "client": "Ferrari Spa",
+        "description": "Development of a mobile hybrid application for Ferrari owners;\n APIs design, development and integration.",
+        "technologies": ["ReactJS", "Redux", "styled-components", "Cordova", "Oracle MCS", "NodeJS"]
+      },
+      {
+        "industry": "Retail",
+        "client": "Sisal Spa",
+        "description": " Development of a mobile hybrid application for online lotteries and customer engagement.",
+        "technologies": ["ReactJS", "Redux", "styled-components", "Cordova"]
+      },
+      {
+        "industry": "Retail",
+        "client": "MATO UK Ltd",
+        "description": "Maintenance of a cross-device mobile application and APIs;\n management of iOS and Android releases.",
+        "technologies": ["AngularJS", "Ionic", "Laravel", "Postgress", "Docker", "SCSS"]
+      },
+      {
+        "industry": "Automotive",
+        "client": "Fiat Chrysler Automobiles",
+        "description": "Development of the user interface for the international website of the Heritage brand.",
+        "technologies": ["Adobe AEM", "MithrilJS", "SCSS"]
+      },
+      {
+        "industry": "Insurance",
+        "client": "Gruppo Reale Mutua",
+        "description": "Maintenance and development of a public cross-device mobile app for insurance services.",
+        "technologies": ["BackboneJS", "jQuery", "Cordova", "CoffeeScript", "Less"]
+      },
+      {
+        "industry": "Automotive",
+        "client": "IVECO",
+        "description": "Development and maintenance of a cross-device multi-market Customer Relationship Manager which features an integration with Microsoft Dynamics.",
+        "technologies": ["NodeJS", "Cordova", "WebSQL", "Couchbase", "Electron", "SCSS"]
+      },
+      {
+        "industry": "Retail",
+        "client": "Valentino Fashion Group",
+        "description": "Development of a cross-device mobile application for retail stores;\n implementation of a custom chat between users.",
+        "technologies": ["MithrilJS", "Less", "NodeJS", "Socket.io", "Cordova"]
+      }
+    ]
   },
   {
     "title": "Developer Jr",
@@ -19,11 +63,25 @@
     "startDate": "2015-01-07",
     "endDate": "2015-07-06",
     "location": "Milan, Italy",
-    "description": "Is simply dummy text of the printing and typesetting industry.",
+    "description": "During my Web Development internship at Spindox I have had the chance to learn a lot about web technologies while successfully contributing to the development of user interfaces for single page web applications and static UI templates.",
     "activities": [
       "maintenance and development of user interfaces for single page web applications",
       "development of static UI templates"
     ],
-    "techs": ["MithrilJS", "VueJS", "Handlebars", "Less", "Gulp"]
+    "techs": ["MithrilJS", "VueJS", "Handlebars", "Less", "Gulp"],
+    "projects": [
+      {
+        "industry": "Insurance",
+        "client": "Gruppo Reale Mutua",
+        "description": "Development of the user interface of a web application for Promotional Coupon Management.",
+        "technologies": ["MithrilJS", "Less", "NodeJS", "MongoDB"]
+      },
+      {
+        "industry": "Retail",
+        "client": "Ferrero Spa",
+        "description": "Maintenance and development of the user interface of a custom Digital Asset Manager.",
+        "technologies": ["VueJS", "NodeJS", "Less"]
+      }
+    ]
   }
 ]

@@ -5,9 +5,17 @@
 import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
+import AnimateHeight from 'react-animate-height';
+
+import uniq from 'lodash/uniq';
+
+import Icon from '../Icon';
+import Projects from '../Projects';
 
 import { scale, rhythm } from '../../utils/typography';
 import { media } from '../../utils/styles';
+
+const ANIMATION_DURATION = 500;
 
 const ExperienceWrapper = styled.div`
   padding: 24px 0;
@@ -41,60 +49,130 @@ const Company = styled.div`
 `;
 const SubTitle = styled.div`
   display: flex;
-  padding-bottom: 24px;
-  
-  
+  align-items: center;
+  ${media.phone`
+    flex-direction: column;
+    align-items: flex-start;
+  `}
+`;
+const Duration = styled.div`
+  display: flex;
+  align-items: center;
 `;
 const Date = styled.div`
   
-  font-style: italic;
   padding-right: 12px;
 
 `;
 
-const Location = styled.div``;
-const Techs = styled.div`display: flex;`;
-const Tech = styled.div`
-  padding-right: 12px;
-  float: left;
+const Location = styled.div`
+
+  display: flex;
+  align-items: center;
+
 `;
-const TechsList = styled.div``;
-const Activities = styled.div`
+const Techs = styled.div`
+
   padding-bottom: 24px;
+  text-align: justify;
 `;
 
-function Experience({
-  title,
-  company,
-  startDate,
-  endDate,
-  location,
-  activities,
-  techs,
-}) {
-  return (
-    <ExperienceWrapper>
-      <Head>
-        <Title>{title}</Title>
-        <Company>{company}</Company>
-      </Head>
-      <Location>{location}</Location>
-      <SubTitle>
-        <Date>{startDate}</Date>
-        <Date>-</Date>
-        <Date>{endDate || 'Present'}</Date>
-      </SubTitle>
-      {activities &&
-      <Activities>
-        Main activities:
-        {activities.map(activity => (<div key={activity}>- {activity}</div>))}
-      </Activities>}
-      {techs &&
-        <Techs>
-          <TechsList>{techs.map(tech => (<Tech key={tech}>{tech}</Tech>))}</TechsList>
-        </Techs>}
-    </ExperienceWrapper>
-  );
+const TechsTitle = styled.div`
+
+  display: flex;
+  align-items: center;
+
+`;
+const Description = styled.div`
+  padding: 24px 0;
+  white-space: pre-line;
+  text-align: justify;
+`;
+
+const ProjectsButton = styled.div`
+  font-weight: 800;
+  font-size: ${rhythm(0.8)};
+  line-height: ${rhythm(0.8)};
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  
+  .projects-icon {
+    transition: all ${ANIMATION_DURATION}ms;
+    transform: rotate(${props => (props.showProjects ? 180 : 0)}deg);
+  }
+`;
+
+class Experience extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showProjects: false,
+      techs: uniq(props.projects.reduce((accumulator, value) => accumulator.concat(value.technologies), [])),
+    };
+    this.toggleProjects = this.toggleProjects.bind(this);
+  }
+
+  toggleProjects() {
+    this.setState({ showProjects: !this.state.showProjects });
+  }
+
+  render() {
+    const {
+      title,
+      company,
+      startDate,
+      endDate,
+      location,
+      description,
+      projects,
+    } = this.props;
+
+    const { showProjects, techs } = this.state;
+    return (
+      <ExperienceWrapper>
+        <Head>
+          <Title>{title}</Title>
+          <Company>{company}</Company>
+        </Head>
+        <SubTitle>
+          <Duration>
+            <Icon name="icon-calendar" />
+            <Date>{startDate}</Date>
+            <Date>-</Date>
+            <Date>{endDate || 'Present'}</Date>
+          </Duration>
+          <Location><Icon name="icon-map-marker" />{location}</Location>
+        </SubTitle>
+        <AnimateHeight
+          duration={ANIMATION_DURATION}
+          height={!showProjects ? 'auto' : 0}
+        >
+          <Description>
+            {description}
+          </Description>
+          {techs &&
+            <Techs>
+              <TechsTitle>
+                <Icon name="icon-wrench" /> Some of the technologies used:
+              </TechsTitle>
+              {techs.join(', ')}.
+            </Techs>
+          }
+        </AnimateHeight>
+        <ProjectsButton onClick={this.toggleProjects} showProjects={showProjects}>
+          projects <Icon className="projects-icon" name="icon-chevron-down" />
+        </ProjectsButton>
+        <AnimateHeight
+          duration={ANIMATION_DURATION}
+          height={showProjects ? 'auto' : 0}
+        >
+          <Projects list={projects} />
+        </AnimateHeight>
+      </ExperienceWrapper>
+    );
+  }
 }
 
 Experience.propTypes = {
@@ -105,6 +183,7 @@ Experience.propTypes = {
   location: PropType.string,
   activities: PropType.array,
   techs: PropType.array,
+  projects: PropType.array,
 };
 
 export default Experience;
