@@ -4,11 +4,14 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import {colors} from "../../utils/styles";
+import { colors } from '../../utils/styles';
 
 const SkillsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  
+  padding-bottom: 24px;
+
 `;
 const Skill = styled.div`
 

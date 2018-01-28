@@ -11,6 +11,7 @@ import Education from '../components/Education';
 import Intro from '../components/Intro';
 import Section from '../components/Section';
 import Skills from '../components/Skills';
+import Interests from '../components/Interests';
 
 import { media, colors } from '../utils/styles';
 
@@ -49,6 +50,22 @@ const SkillsWrapper = styled.div`
   
 `;
 
+const InterestsWrapper = styled.div`
+
+  background: ${colors.primaryLight};
+  ${pagePadding()}
+  
+`;
+
+const ContactsWrapper = styled.div`
+
+  background: ${colors.primary};
+  ${pagePadding()}
+  
+  height: 30vh;
+  
+`;
+
 class Resume extends React.PureComponent {
   render() {
     const { edges: careers } = this.props.data.allExperienceJson;
@@ -56,6 +73,7 @@ class Resume extends React.PureComponent {
     const { edges: techSkills } = this.props.data.techSkills;
     const { edges: languages } = this.props.data.languages;
     const { edges: tools } = this.props.data.tools;
+    const { edges: interests } = this.props.data.allInterestsJson;
     const { profileJson } = this.props.data;
     return (
       <ResumeWrapper>
@@ -81,6 +99,14 @@ class Resume extends React.PureComponent {
             <Skills list={languages} />
           </Section>
         </SkillsWrapper>
+        <InterestsWrapper>
+          <Section title="interests">
+            <Interests list={interests} />
+          </Section>
+        </InterestsWrapper>
+        <ContactsWrapper>
+
+        </ContactsWrapper>
       </ResumeWrapper>
     );
   }
@@ -150,6 +176,14 @@ export const pageQuery = graphql`
         node {
           label
           level
+        }
+      }
+    }
+    allInterestsJson {
+      edges {
+        node {
+          name
+          icon
         }
       }
     }

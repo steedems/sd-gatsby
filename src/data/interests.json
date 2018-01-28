@@ -1,0 +1,32 @@
+[
+  {
+    "name": "sailing",
+    "icon": "boat",
+    "description": ""
+  },
+  {
+    "name": "music",
+    "icon": "guitar",
+    "description": ""
+  },
+  {
+    "name": "nature",
+    "icon": "mountain",
+    "description": ""
+  },
+  {
+    "name": "technology",
+    "icon": "tech",
+    "description": ""
+  },
+  {
+    "name": "traveling",
+    "icon": "world",
+    "description": ""
+  },
+  {
+    "name": "climbing",
+    "icon": "climb",
+    "description": ""
+  }
+]
