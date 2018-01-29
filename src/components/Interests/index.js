@@ -32,12 +32,11 @@ const InterestIcon = styled(Icon)``;
 const InterestName = styled.div``;
 
 function Interests({ list }) {
-  console.log(list);
   return (
     <InterestsWrapper>
       {list.map(interest => (
         <Interest>
-          <InterestIcon size={3} name={'icon-github' || interest.node.icon} />
+          <InterestIcon size={3} name={`icon-${interest.node.icon}`} />
           <InterestName>{interest.node.name}</InterestName>
         </Interest>))}
     </InterestsWrapper>

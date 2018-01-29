@@ -30,34 +30,18 @@ const ResumeWrapper = styled.div`
 
 `;
 
-const IntroWrapper = styled.div`
+const SectionWrapper = styled.div`
 
-  background: ${colors.primary};
   ${pagePadding()}
-
-`;
-const ExperiencesWrapper = styled.div`
-
   background: ${colors.primaryLight};
-  ${pagePadding()}
+  
+  &:first-child {
+    background: ${colors.primary};
+  }
   
 `;
 
-const SkillsWrapper = styled.div`
-
-  background: ${colors.primary};
-  ${pagePadding()}
-  
-`;
-
-const InterestsWrapper = styled.div`
-
-  background: ${colors.primaryLight};
-  ${pagePadding()}
-  
-`;
-
-const ContactsWrapper = styled.div`
+const ContactsWrapper = styled(SectionWrapper)`
 
   background: ${colors.primary};
   ${pagePadding()}
@@ -77,33 +61,39 @@ class Resume extends React.PureComponent {
     const { profileJson } = this.props.data;
     return (
       <ResumeWrapper>
-        <IntroWrapper>
+        <SectionWrapper>
           <Intro {...profileJson} />
-        </IntroWrapper>
-        <ExperiencesWrapper>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="work experience">
             {careers.map((edge, index) => <Experience key={index} {...edge.node} />)}
           </Section>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="education">
             {education.map((edge, index) => <Education key={index} {...edge.node} />)}
           </Section>
-        </ExperiencesWrapper>
-        <SkillsWrapper>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="skills">
             <Skills list={techSkills} />
           </Section>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="tools">
             <Skills list={tools} />
           </Section>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="languages">
             <Skills list={languages} />
           </Section>
-        </SkillsWrapper>
-        <InterestsWrapper>
+        </SectionWrapper>
+        <SectionWrapper>
           <Section title="interests">
             <Interests list={interests} />
           </Section>
-        </InterestsWrapper>
+        </SectionWrapper>
         <ContactsWrapper>
 
         </ContactsWrapper>
@@ -129,6 +119,7 @@ export const pageQuery = graphql`
       twitter
       github
       email
+      phone
     } 
     allExperienceJson {
       edges {

@@ -1,32 +1,32 @@
 [
   {
     "name": "sailing",
-    "icon": "boat",
-    "description": ""
-  },
-  {
-    "name": "music",
-    "icon": "guitar",
+    "icon": "sailing",
     "description": ""
   },
   {
     "name": "nature",
-    "icon": "mountain",
-    "description": ""
-  },
-  {
-    "name": "technology",
-    "icon": "tech",
-    "description": ""
-  },
-  {
-    "name": "traveling",
-    "icon": "world",
+    "icon": "nature",
     "description": ""
   },
   {
     "name": "climbing",
-    "icon": "climb",
+    "icon": "climbing",
+    "description": ""
+  },
+  {
+    "name": "traveling",
+    "icon": "traveling",
+    "description": ""
+  },
+  {
+    "name": "music",
+    "icon": "music2",
+    "description": ""
+  },
+  {
+    "name": "technology",
+    "icon": "technology",
     "description": ""
   }
 ]

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import Icon from '../Icon';
 
-import { scale } from '../../utils/typography';
+import {rhythm, scale} from '../../utils/typography';
 import { media } from '../../utils/styles';
 
 
@@ -39,6 +39,14 @@ const Email = styled.div`
 
 `;
 
+const Phone = styled.div`
+
+  cursor: pointer;
+  font-size: ${rhythm(0.6)};
+  // line-height: ${rhythm(0.5)};
+
+`;
+
 
 const Links = styled.div`
 
@@ -57,6 +65,7 @@ const Links = styled.div`
 function Intro({
   name,
   email,
+  phone,
   linkedIn,
   twitter,
   github,
@@ -65,6 +74,7 @@ function Intro({
     <IntroWrapper>
       <Name>{name}</Name>
       <Email onClick={() => open(`mailto:${email}?Subject=Hi there!`, '_top')}>{email}</Email>
+      <Phone onClick={() => 0}>{phone}</Phone>
       <Links>
         <Icon onClick={() => open(linkedIn)} name="icon-linkedin" size={2} />
         <Icon onClick={() => open(twitter)} name="icon-twitter" size={2} />

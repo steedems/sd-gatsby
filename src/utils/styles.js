@@ -27,6 +27,7 @@ const media = Object.keys(sizes).reduce((accumulator, label) => {
 const colors = {
   primary: '#dfeaf1',
   primaryLight: '#F2F7F9',
+  primaryLighter: '#FFFFFF',
   primaryDark: '#8a959b',
   headerColor: 'rgba(64,64,64,1)',
   bodyColor: 'rgba(64,64,64,.9)',

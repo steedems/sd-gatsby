@@ -42,8 +42,9 @@ const Score = styled.div`
   flex: 0 0 50%;
   display: flex;
   align-items: center;
-  height: 2.3px;
-  background: ${colors.primaryLight};
+  height: 8px;
+  // background: ${colors.primaryLight};
+  border: solid 1px ${colors.primaryDark};
   &:after {
     content: '';
     width: ${props => props.level}%;

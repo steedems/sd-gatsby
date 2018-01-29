@@ -167,6 +167,7 @@ class Experience extends React.PureComponent {
         <AnimateHeight
           duration={ANIMATION_DURATION}
           height={showProjects ? 'auto' : 0}
+          style={{ overflow: 'auto' }}
         >
           <Projects list={projects} />
         </AnimateHeight>

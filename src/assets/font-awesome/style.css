@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?fr662k');
-  src:  url('fonts/icomoon.eot?fr662k#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?fr662k') format('truetype'),
-    url('fonts/icomoon.woff?fr662k') format('woff'),
-    url('fonts/icomoon.svg?fr662k#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ex6gqn');
+  src:  url('fonts/icomoon.eot?ex6gqn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ex6gqn') format('truetype'),
+    url('fonts/icomoon.woff?ex6gqn') format('woff'),
+    url('fonts/icomoon.svg?ex6gqn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-traveling:before {
+  content: "\e900";
+}
+.icon-music2:before {
+  content: "\e901";
+}
+.icon-sailing:before {
+  content: "\e902";
+}
+.icon-nature:before {
+  content: "\e903";
+}
+.icon-climbing:before {
+  content: "\e904";
+}
+.icon-technology:before {
+  content: "\e905";
+}
 .icon-asterisk:before {
   content: "\f069";
 }
