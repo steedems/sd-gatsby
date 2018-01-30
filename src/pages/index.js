@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import Link, { navigateTo } from 'gatsby-link';
 
 import { scale } from '../utils/typography';
 
@@ -43,22 +43,27 @@ const ToResume = styled(Link)`
 
 `;
 
-const IndexPage = ({ data }) => {
-  const {
-    name, title,
-  } = data.profileJson;
-  return (
-    <HomeWrapper>
-      <h1>{name}</h1>
-      <h2>{title}</h2>
-      <ToResume to="/resume">
-        <Icon name="icon-drivers-license-o" size={2} />
-        <Icon name="icon-angle-right" />
-      </ToResume>
-    </HomeWrapper>
-  );
-};
 
+class IndexPage extends React.PureComponent {
+  componentDidMount() {
+    navigateTo('/resume');
+  }
+  render() {
+    const {
+      name, title,
+    } = this.props.data.profileJson;
+    return (
+      <HomeWrapper>
+        <h1>{name}</h1>
+        <h2>{title}</h2>
+        <ToResume to="/resume">
+          <Icon name="icon-drivers-license-o" size={2} />
+          <Icon name="icon-angle-right" />
+        </ToResume>
+      </HomeWrapper>
+    );
+  }
+}
 
 IndexPage.propTypes = {
   data: PropType.object,
