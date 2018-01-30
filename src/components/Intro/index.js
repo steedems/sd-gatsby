@@ -7,15 +7,8 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
 
-import Icon from '../Icon';
-
-import {rhythm, scale} from '../../utils/typography';
+import { rhythm, scale } from '../../utils/typography';
 import { media } from '../../utils/styles';
-
-
-function open(link, target = '_blank') {
-  return window.open(link, target);
-}
 
 const IntroWrapper = styled.div`
 
@@ -24,68 +17,40 @@ const IntroWrapper = styled.div`
   justify-content: center;
   
   padding: 24px 0; 
+  
+  height: 100vh;
 
 `;
 const Name = styled.h1`
 
   margin: 0;
-  ${{ ...scale(2) }}
-
-`;
-
-const Email = styled.div`
-
-  cursor: pointer;
-
-`;
-
-const Phone = styled.div`
-
-  cursor: pointer;
-  font-size: ${rhythm(0.6)};
-  // line-height: ${rhythm(0.5)};
+  ${{ ...scale(2.5) }};
+  text-align: center;
 
 `;
 
 
-const Links = styled.div`
+const Quote = styled.h2`
 
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
-
+    ${{ ...scale(1.25) }}
+    ${media.phone`${{ ...scale(0.75) }}`}
+    text-align: center;
 `;
+
 
 function Intro({
   name,
-  email,
-  phone,
-  linkedIn,
-  twitter,
-  github,
+  title,
+  quote,
 }) {
   return (
     <IntroWrapper>
       <Name>{name}</Name>
-      <Email onClick={() => open(`mailto:${email}?Subject=Hi there!`, '_top')}>{email}</Email>
-      <Phone onClick={() => 0}>{phone}</Phone>
-      <Links>
-        <Icon onClick={() => open(linkedIn)} name="icon-linkedin" size={2} />
-        <Icon onClick={() => open(twitter)} name="icon-twitter" size={2} />
-        <Icon onClick={() => open(github)} name="icon-github" size={2} />
-      </Links>
+      <Quote>{title}</Quote>
     </IntroWrapper>
   );
 }
 
-Intro.propTypes = {
-
-};
+Intro.propTypes = {};
 
 export default Intro;

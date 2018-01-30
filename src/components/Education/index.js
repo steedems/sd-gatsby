@@ -6,12 +6,14 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
 
-import {rhythm, scale} from '../../utils/typography';
+import { rhythm, scale } from '../../utils/typography';
 import { media } from '../../utils/styles';
+
+import Icon from '../Icon';
 
 const EducationWrapper = styled.div`
 
-  padding: 24px 0 48px 0;
+  padding-top: 24px;
 
 `;
 const Head = styled.div`
@@ -43,16 +45,30 @@ const School = styled.div`
 
 `;
 const SubTitle = styled.div`
-  display: flex;  
+  display: flex;
+  align-items: center;
+  ${media.phone`
+    flex-direction: column;
+    align-items: flex-start;`};
 `;
+
+const Duration = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Date = styled.div`
   
-  font-style: italic;
   padding-right: 12px;
 
 `;
 
-const Location = styled.div``;
+const Location = styled.div`
+
+  display: flex;
+  align-items: center;
+
+`;
 
 function Education({
   title,
@@ -67,11 +83,14 @@ function Education({
         <Title>{title}</Title>
         <School>{school}</School>
       </Head>
-      <Location>{location}</Location>
       <SubTitle>
-        <Date>{startDate}</Date>
-        <Date>-</Date>
-        <Date>{endDate || 'Present'}</Date>
+        <Duration>
+          <Icon name="icon-calendar" />
+          <Date>{startDate}</Date>
+          <Date>-</Date>
+          <Date>{endDate || 'Present'}</Date>
+        </Duration>
+        <Location><Icon name="icon-map-marker" />{location}</Location>
       </SubTitle>
     </EducationWrapper>
   );

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 import Icon from '../Icon';
 import { rhythm } from '../../utils/typography';
-import { colors } from '../../utils/styles';
+import { colors, media } from '../../utils/styles';
 
 const ProjectsWrapper = styled.div``;
 const Project = styled.div`
@@ -35,7 +35,8 @@ const Description = styled.div`
   align-items: center;
   white-space: pre-line;
   text-align: justify;
-
+  ${media.phone`padding: 12px 0;`};
+  
 `;
 const Techs = styled.div`
 
@@ -51,7 +52,7 @@ function Projects({ list }) {
       {list.map((project, i) => (
         <Project key={i}>
           <Client><Icon name="icon-suitcase" />{project.client} - {project.industry}</Client>
-          <Description><Icon name="icon-tasks"/>{project.description}</Description>
+          <Description><Icon name="icon-tasks" />{project.description}</Description>
           <Techs><Icon name="icon-wrench" />{project.technologies.join(', ')}</Techs>
         </Project>))}
     </ProjectsWrapper>

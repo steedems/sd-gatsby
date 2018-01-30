@@ -12,15 +12,21 @@ import Intro from '../components/Intro';
 import Section from '../components/Section';
 import Skills from '../components/Skills';
 import Interests from '../components/Interests';
+import Icon from '../components/Icon';
 
 import { media, colors } from '../utils/styles';
+import {rhythm} from "../utils/typography";
+
+function open(link, target = '_blank') {
+  return window.open(link, target);
+}
 
 const pagePadding = () => css`
   padding: 0 256px;
   ${media.giant`padding: 0 256px;`}
   ${media.desktop`padding: 0 128px;`}
-  ${media.tablet`padding: 24px;`}
-  ${media.phone`padding: 12px;`}
+  ${media.tablet`padding: 0 24px;`}
+  ${media.phone`padding: 0 12px;`}
 `;
 
 const ResumeWrapper = styled.div`
@@ -44,10 +50,42 @@ const SectionWrapper = styled.div`
 const ContactsWrapper = styled(SectionWrapper)`
 
   background: ${colors.primary};
-  ${pagePadding()}
+
+  padding-bottom: 24px;
+      
+`;
+
+const Links = styled.div`
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   
-  height: 30vh;
-  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+`;
+
+const Email = styled.div`
+
+  cursor: pointer;
+
+`;
+
+const Phone = styled.div`
+
+  cursor: pointer;
+  font-size: ${rhythm(0.6)};
+  // line-height: ${rhythm(0.5)};
+
+`;
+
+const Contact = styled(Icon)`
+
+  padding: 12px;
+
 `;
 
 class Resume extends React.PureComponent {
@@ -95,7 +133,15 @@ class Resume extends React.PureComponent {
           </Section>
         </SectionWrapper>
         <ContactsWrapper>
-
+          <Section title="contacts">
+            <Email onClick={() => open(`mailto:${profileJson.email}?Subject=Hi there!`, '_top')}>{profileJson.email}</Email>
+            <Phone onClick={() => 0}>{profileJson.phone}</Phone>
+            <Links>
+              <Contact onClick={() => open(profileJson.linkedIn)} name="icon-linkedin" size={2} />
+              <Contact onClick={() => open(profileJson.twitter)} name="icon-twitter" size={2} />
+              <Contact onClick={() => open(profileJson.github)} name="icon-github" size={2} />
+            </Links>
+          </Section>
         </ContactsWrapper>
       </ResumeWrapper>
     );
@@ -115,6 +161,7 @@ export const pageQuery = graphql`
     profileJson {
       name
       title
+      quote
       linkedIn
       twitter
       github

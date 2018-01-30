@@ -9,14 +9,18 @@ import styled from 'styled-components';
 const IconWrapper = styled.div`
 
   font-size: ${props => props.size}rem;
-  margin: 12px;
-  cursor: pointer;
+  padding: 12px 12px 12px 0;
+  cursor: ${props => (props.onClick ? 'pointer' : '')};
 
 `;
 
-function Icon({ size, name, onClick, className }) {
+function Icon({
+  size, name, onClick, className,
+}) {
   return (
-    <IconWrapper onClick={onClick} size={size} className={className}><i className={name} /></IconWrapper>
+    <IconWrapper onClick={onClick} size={size} className={className}>
+      <i className={name} />
+    </IconWrapper>
   );
 }
 

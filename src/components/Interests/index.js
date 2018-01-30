@@ -11,7 +11,6 @@ import Icon from '../Icon';
 import { scale } from '../../utils/typography';
 
 const InterestsWrapper = styled.div`
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,23 +18,25 @@ const InterestsWrapper = styled.div`
   flex-wrap: wrap;
 `;
 const Interest = styled.div`
-
   flex: 1;
-  ${media.phone`flex: 1 1 50%;`}
+  ${media.phone`flex: 1 1 50%;`};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+const InterestIcon = styled(Icon)`
+
+  padding: 12px;
 
 `;
-const InterestIcon = styled(Icon)``;
 const InterestName = styled.div``;
 
 function Interests({ list }) {
   return (
     <InterestsWrapper>
       {list.map(interest => (
-        <Interest>
+        <Interest key={interest.node.name}>
           <InterestIcon size={3} name={`icon-${interest.node.icon}`} />
           <InterestName>{interest.node.name}</InterestName>
         </Interest>))}

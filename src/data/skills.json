@@ -20,7 +20,7 @@
     "type": "tech"
   },
   {
-    "label": "Ionic 1",
+    "label": "Ionic",
     "level": 35,
     "type": "tech"
   },
@@ -62,6 +62,11 @@
   {
     "label": "Laravel Framework",
     "level": 20,
+    "type": "tech"
+  },
+  {
+    "label": "SQL",
+    "level": 40,
     "type": "tech"
   },
   {

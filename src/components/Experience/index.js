@@ -15,7 +15,7 @@ import Projects from '../Projects';
 import { scale, rhythm } from '../../utils/typography';
 import { media } from '../../utils/styles';
 
-const ANIMATION_DURATION = 500;
+const ANIMATION_DURATION = 750;
 
 const ExperienceWrapper = styled.div`
   padding: 24px 0;
@@ -109,7 +109,7 @@ class Experience extends React.PureComponent {
     super(props);
     this.state = {
       showProjects: false,
-      techs: uniq(props.projects.reduce((accumulator, value) => accumulator.concat(value.technologies), [])),
+      techs: uniq(props.projects.reduce((accumulator, value) => accumulator.concat(value.technologies), props.techs)),
     };
     this.toggleProjects = this.toggleProjects.bind(this);
   }
@@ -145,13 +145,13 @@ class Experience extends React.PureComponent {
           </Duration>
           <Location><Icon name="icon-map-marker" />{location}</Location>
         </SubTitle>
+        <Description>
+          {description}
+        </Description>
         <AnimateHeight
           duration={ANIMATION_DURATION}
           height={!showProjects ? 'auto' : 0}
         >
-          <Description>
-            {description}
-          </Description>
           {techs &&
             <Techs>
               <TechsTitle>
