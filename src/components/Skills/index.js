@@ -44,12 +44,12 @@ const Score = styled.div`
   align-items: center;
   height: 8px;
   // background: ${colors.primaryLight};
-  border: solid 1px ${colors.primaryDark};
+  border: solid 1px ${colors.highlight};
   &:after {
     content: '';
     width: ${props => props.level}%;
     height: 100%;
-    background: ${colors.primaryDark};
+    background: ${colors.highlight};
   }
 
 `;
@@ -57,7 +57,7 @@ const Score = styled.div`
 function Skills({ list }) {
   return (
     <SkillsWrapper>
-      {list.map(skill => (
+      {list.sort((a, b) => b.node.level - a.node.level).map(skill => (
         <Skill key={skill.node.label}>
           <Label>{skill.node.label}</Label>
           <Score level={skill.node.level} />

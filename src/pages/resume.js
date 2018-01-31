@@ -108,11 +108,6 @@ class Resume extends React.PureComponent {
           </Section>
         </SectionWrapper>
         <SectionWrapper>
-          <Section title="education">
-            {education.map((edge, index) => <Education key={index} {...edge.node} />)}
-          </Section>
-        </SectionWrapper>
-        <SectionWrapper>
           <Section title="skills">
             <Skills list={techSkills} />
           </Section>
@@ -120,6 +115,11 @@ class Resume extends React.PureComponent {
         <SectionWrapper>
           <Section title="tools">
             <Skills list={tools} />
+          </Section>
+        </SectionWrapper>
+        <SectionWrapper>
+          <Section title="education">
+            {education.map((edge, index) => <Education key={index} {...edge.node} />)}
           </Section>
         </SectionWrapper>
         <SectionWrapper>

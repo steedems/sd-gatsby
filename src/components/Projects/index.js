@@ -13,12 +13,10 @@ import { colors, media } from '../../utils/styles';
 const ProjectsWrapper = styled.div``;
 const Project = styled.div`
 
-  padding: 12px 0;
-  border-bottom: solid 1px ${colors.bodyColor};
-  
-  &:last-child {
-    border-bottom: none;
-  }
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border: solid 1px ${colors.highlight};
 
 `;
 const Client = styled.div`

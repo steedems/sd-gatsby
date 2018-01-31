@@ -13,7 +13,7 @@ import Icon from '../Icon';
 import Projects from '../Projects';
 
 import { scale, rhythm } from '../../utils/typography';
-import { media } from '../../utils/styles';
+import { media, colors } from '../../utils/styles';
 
 const ANIMATION_DURATION = 750;
 
@@ -97,10 +97,13 @@ const ProjectsButton = styled.div`
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
+  color: ${colors.bodyColor};
   
   .projects-icon {
     transition: all ${ANIMATION_DURATION}ms;
     transform: rotate(${props => (props.showProjects ? 180 : 0)}deg);
+    padding: 12px;
+    
   }
 `;
 
@@ -167,6 +170,7 @@ class Experience extends React.PureComponent {
         <AnimateHeight
           duration={ANIMATION_DURATION}
           height={showProjects ? 'auto' : 0}
+          // height={showProjects ? 350 : 0}
           style={{ overflow: 'auto' }}
         >
           <Projects list={projects} />
