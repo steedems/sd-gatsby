@@ -17,6 +17,7 @@
     "react-helmet": "^5.2.0",
     "serve-static": "^1.13.1",
     "styled-components": "^2.4.0",
+    "swiper": "^4.1.0",
     "typography-theme-fairy-gates": "^0.15.11"
   },
   "keywords": [

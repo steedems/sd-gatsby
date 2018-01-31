@@ -5,7 +5,9 @@
 
 import React from 'react';
 import PropType from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+import Icon from '../Icon';
 
 import { rhythm, scale } from '../../utils/typography';
 import { media } from '../../utils/styles';
@@ -19,6 +21,7 @@ const IntroWrapper = styled.div`
   padding: 24px 0; 
   
   height: 100vh;
+  position: relative;
 
 `;
 const Name = styled.h1`
@@ -37,16 +40,45 @@ const Quote = styled.h2`
     text-align: center;
 `;
 
+const animationName = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+	40% {
+    transform: translate(-50%, -30px);
+  }
+	60% {
+    transform: translate(-50%, -15px);
+  }
+`;
+
+const Arrow = styled.div`
+
+    font-size: 2rem;
+    line-height: 3rem;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    animation: ${animationName} 2s infinite;
+    
+    .intro-arrow {
+      padding: 12px;
+      opacity: ${props => (props.scrolled ? 0 : 1)};
+      transition: all 1s;
+    }
+`;
+
 
 function Intro({
   name,
   title,
-  quote,
+  scrolled,
 }) {
   return (
     <IntroWrapper>
       <Name>{name}</Name>
       <Quote>{title}</Quote>
+      <Arrow scrolled={scrolled} ><Icon className="intro-arrow" name="icon-chevron-down" /></Arrow>
     </IntroWrapper>
   );
 }

@@ -101,9 +101,8 @@ const ProjectsButton = styled.div`
   
   .projects-icon {
     transition: all ${ANIMATION_DURATION}ms;
-    transform: rotate(${props => (props.showProjects ? 180 : 0)}deg);
+    transform: rotate(${props => (props.showProjects ? 270 : 0)}deg);
     padding: 12px;
-    
   }
 `;
 
@@ -165,12 +164,12 @@ class Experience extends React.PureComponent {
           }
         </AnimateHeight>
         <ProjectsButton onClick={this.toggleProjects} showProjects={showProjects}>
-          projects <Icon className="projects-icon" name="icon-chevron-down" />
+          projects <Icon size={.75} className="projects-icon" name="icon-chevron-down" />
         </ProjectsButton>
         <AnimateHeight
           duration={ANIMATION_DURATION}
+          // height={'auto'}
           height={showProjects ? 'auto' : 0}
-          // height={showProjects ? 350 : 0}
           style={{ overflow: 'auto' }}
         >
           <Projects list={projects} />

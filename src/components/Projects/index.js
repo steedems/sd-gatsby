@@ -6,6 +6,8 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
 
+import Swiper from '../Swiper';
+
 import Icon from '../Icon';
 import { rhythm } from '../../utils/typography';
 import { colors, media } from '../../utils/styles';
@@ -13,8 +15,7 @@ import { colors, media } from '../../utils/styles';
 const ProjectsWrapper = styled.div``;
 const Project = styled.div`
 
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 24px;
   border-radius: 3px;
   border: solid 1px ${colors.highlight};
 
@@ -47,12 +48,14 @@ const Techs = styled.div`
 function Projects({ list }) {
   return (
     <ProjectsWrapper>
-      {list.map((project, i) => (
-        <Project key={i}>
-          <Client><Icon name="icon-suitcase" />{project.client} - {project.industry}</Client>
-          <Description><Icon name="icon-tasks" />{project.description}</Description>
-          <Techs><Icon name="icon-wrench" />{project.technologies.join(', ')}</Techs>
-        </Project>))}
+      <Swiper slidesPerView={1.05} centeredSlides>
+        {list.map((project, i) => (
+          <Project key={i}>
+            <Client><Icon name="icon-suitcase" />{project.client} - {project.industry}</Client>
+            <Description><Icon name="icon-tasks" />{project.description}</Description>
+            <Techs><Icon name="icon-wrench" />{project.technologies.join(', ')}</Techs>
+          </Project>))}
+      </Swiper>
     </ProjectsWrapper>
   );
 }

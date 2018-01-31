@@ -19,15 +19,21 @@ const InterestsWrapper = styled.div`
 `;
 const Interest = styled.div`
   flex: 1;
-  ${media.phone`flex: 1 1 50%;`};
+  ${media.phone`flex: 1 1 50%; padding: 12px;`};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
-const InterestIcon = styled(Icon)`
+const InterestIcon = styled.div`
 
-  padding: 12px;
+  padding: 8px;
+  font-size: 2rem;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  opacity: .9;
+  filter: grayscale(.3);
 
 `;
 const InterestName = styled.div``;
@@ -37,7 +43,8 @@ function Interests({ list }) {
     <InterestsWrapper>
       {list.map(interest => (
         <Interest key={interest.node.name}>
-          <InterestIcon size={3} name={`icon-${interest.node.icon}`} />
+          {/* <InterestIcon size={3} name={`icon-${interest.node.icon}`} /> */}
+          <InterestIcon>{interest.node.icon}</InterestIcon>
           <InterestName>{interest.node.name}</InterestName>
         </Interest>))}
     </InterestsWrapper>

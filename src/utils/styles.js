@@ -38,7 +38,8 @@ const colors = {
   primary: '#F5FAFC',
   primaryLight: '#FFFEFC',
   primaryLighter: '#FFF',
-  highlight: '#E84646',
+  // highlight: '#D13F3F',
+  highlight: '#EF5353',
   headerColor: 'rgba(64,64,64,1)',
   bodyColor: 'rgba(64,64,64,.9)',
 };

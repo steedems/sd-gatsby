@@ -15,7 +15,7 @@ import Interests from '../components/Interests';
 import Icon from '../components/Icon';
 
 import { media, colors } from '../utils/styles';
-import {rhythm} from "../utils/typography";
+import { rhythm } from '../utils/typography';
 
 function open(link, target = '_blank') {
   return window.open(link, target);
@@ -85,10 +85,21 @@ const Phone = styled.div`
 const Contact = styled(Icon)`
 
   padding: 12px;
+  color: ${colors.bodyColor};
 
 `;
 
 class Resume extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrolled: false,
+    };
+    window.document.body.addEventListener('scroll', () => {
+      const { scrollTop } = window.document.body;
+      this.setState({ scrolled: scrollTop > 0 });
+    });
+  }
   render() {
     const { edges: careers } = this.props.data.allExperienceJson;
     const { edges: education } = this.props.data.allEducationJson;
@@ -100,7 +111,7 @@ class Resume extends React.PureComponent {
     return (
       <ResumeWrapper>
         <SectionWrapper>
-          <Intro {...profileJson} />
+          <Intro {...profileJson} scrolled={this.state.scrolled} />
         </SectionWrapper>
         <SectionWrapper>
           <Section title="work experience">
