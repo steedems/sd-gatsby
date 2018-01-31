@@ -56,10 +56,10 @@ class IndexPage extends React.PureComponent {
       <HomeWrapper>
         <h1>{name}</h1>
         <h2>{title}</h2>
-        <ToResume to="/resume">
-          <Icon name="icon-drivers-license-o" size={2} />
-          <Icon name="icon-angle-right" />
-        </ToResume>
+        {/*<ToResume to="/resume">*/}
+          {/*<Icon name="icon-drivers-license-o" size={2} />*/}
+          {/*<Icon name="icon-angle-right" />*/}
+        {/*</ToResume>*/}
       </HomeWrapper>
     );
   }
