@@ -95,10 +95,16 @@ class Resume extends React.PureComponent {
     this.state = {
       scrolled: false,
     };
-    window.document.body.addEventListener('scroll', () => {
-      const { scrollTop } = window.document.body;
-      this.setState({ scrolled: scrollTop > 0 });
-    });
+  }
+  componentDidMount() {
+    try {
+      window.document.body.addEventListener('scroll', () => {
+        const { scrollTop } = window.document.body;
+        this.setState({ scrolled: scrollTop > 0 });
+      });
+    } catch (e) {
+      console.log('body.addEventListener failed', e);
+    }
   }
   render() {
     const { edges: careers } = this.props.data.allExperienceJson;

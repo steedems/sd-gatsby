@@ -39,7 +39,7 @@ const colors = {
   primaryLight: '#FFFEFC',
   primaryLighter: '#FFF',
   // highlight: '#D13F3F',
-  highlight: '#EF5353',
+  highlight: '#4B86A5',
   headerColor: 'rgba(64,64,64,1)',
   bodyColor: 'rgba(64,64,64,.9)',
 };
