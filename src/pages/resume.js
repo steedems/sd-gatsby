@@ -38,7 +38,7 @@ const ResumeWrapper = styled.div`
 
 const SectionWrapper = styled.div`
 
-  ${pagePadding()}
+  ${pagePadding()};
   background: ${colors.primaryLight};
   
   &:first-child {
@@ -120,7 +120,7 @@ class Resume extends React.PureComponent {
           <Intro {...profileJson} scrolled={this.state.scrolled} />
         </SectionWrapper>
         <SectionWrapper>
-          <Section title="work experience">
+          <Section title="experience">
             {careers.map((edge, index) => <Experience key={index} {...edge.node} />)}
           </Section>
         </SectionWrapper>

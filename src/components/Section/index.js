@@ -10,6 +10,7 @@ import { scale } from '../../utils/typography';
 const SectionWrapper = styled.div``;
 const Title = styled.div`
 
+  display: block;
   ${{ ...scale(1.5) }}
   padding-top: 24px;
   margin-bottom: 24px;

@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import SwiperJS from 'swiper/dist/js/swiper';
 import 'swiper/dist/css/swiper.min.css';
 
+import Pagination from './Pagination';
 
 const SliderContainer = styled.div`
 
@@ -85,6 +86,7 @@ class Slider extends React.PureComponent {
         ) : (
           children
         )}
+        {shouldSlide && <Pagination dots={children.length} index={index} />}
       </SliderContainer>
     );
   }

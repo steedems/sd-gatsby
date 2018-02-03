@@ -7,6 +7,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
+
 import Icon from '../Icon';
 
 import { rhythm, scale } from '../../utils/typography';
@@ -60,6 +61,13 @@ const Arrow = styled.div`
     bottom: 24px;
     left: 50%;
     animation: ${animationName} 2s infinite;
+    cursor: pointer;
+    
+    a {
+      text-decoration: none;
+      text-shadow: none;
+      background-image: none;
+    }
     
     .intro-arrow {
       padding: 12px;
@@ -67,6 +75,16 @@ const Arrow = styled.div`
       transition: all 1s;
     }
 `;
+
+
+const letThePartyBegin = () => {
+  if (!window) return;
+  window.document.body.scrollBy({
+    top: window.document.body.offsetHeight,
+    left: 0,
+    behavior: 'smooth',
+  });
+};
 
 
 function Intro({
@@ -78,7 +96,9 @@ function Intro({
     <IntroWrapper>
       <Name>{name}</Name>
       <Quote>{title}</Quote>
-      <Arrow scrolled={scrolled} ><Icon className="intro-arrow" name="icon-chevron-down" /></Arrow>
+      <Arrow scrolled={scrolled} onClick={letThePartyBegin}>
+        <Icon className="intro-arrow" name="icon-chevron-down" />
+      </Arrow>
     </IntroWrapper>
   );
 }

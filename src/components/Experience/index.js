@@ -101,7 +101,7 @@ const ProjectsButton = styled.div`
   
   .projects-icon {
     transition: all ${ANIMATION_DURATION}ms;
-    transform: rotate(${props => (props.showProjects ? 270 : 0)}deg);
+    transform: rotate(${props => (props.showProjects ? 180 : 0)}deg);
     padding: 12px;
   }
 `;

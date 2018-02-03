@@ -7,6 +7,15 @@ import fairyGates from 'typography-theme-fairy-gates';
 
 import { colors } from './styles';
 
+fairyGates.overrideThemeStyles = ({ rhythm }, options) => ({
+  a: {
+    textDecoration: 'none',
+    textShadow: 'none',
+    backgroundImage: 'none',
+    color: 'inherit',
+  },
+});
+
 const theme = Object.assign({}, fairyGates, {
   baseFontSize: '18px',
   baseLineHeight: 1.45,
@@ -40,6 +49,11 @@ const theme = Object.assign({}, fairyGates, {
   headerWeight: '400',
   bodyWeight: 400,
   boldWeight: 700,
+  a: {
+    textDecoration: 'none',
+    textShadow: 'none',
+    backgroundImage: 'none',
+  },
 });
 
 const typography = new Typography(theme);

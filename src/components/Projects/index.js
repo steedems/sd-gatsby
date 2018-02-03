@@ -48,7 +48,7 @@ const Techs = styled.div`
 function Projects({ list }) {
   return (
     <ProjectsWrapper>
-      <Swiper slidesPerView={1.05} centeredSlides>
+      <Swiper slidesPerView={1} centeredSlides slideToClickedSlide spaceBetween={24}>
         {list.map((project, i) => (
           <Project key={i}>
             <Client><Icon name="icon-suitcase" />{project.client} - {project.industry}</Client>

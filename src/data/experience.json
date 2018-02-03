@@ -52,7 +52,7 @@
       {
         "industry": "Automotive",
         "client": "IVECO",
-        "description": "Development and maintenance of a cross-device multi-market Customer Relationship Manager which features an integration with Microsoft Dynamics.",
+        "description": "Development and maintenance of a cross-device multi-market Customer Relationship Manager.",
         "technologies": ["NodeJS", "Cordova", "WebSQL", "Couchbase", "Electron", "SCSS"]
       },
       {
