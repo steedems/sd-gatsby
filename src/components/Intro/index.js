@@ -21,7 +21,7 @@ const IntroWrapper = styled.div`
   
   padding: 24px 0; 
   
-  height: ${window ? `${window.innerHeight}px` : '100vh'};
+  height: ${props => props.height};
   position: relative;
 
 `;
@@ -87,6 +87,15 @@ const letThePartyBegin = () => {
   });
 };
 
+const getWindowHeight = () => {
+  try {
+    if (!window) return '100vh';
+    return `${window.innerHeight}px`;
+  } catch (e) {
+    console.warn('gatsby did not find window');
+  }
+};
+
 
 function Intro({
   name,
@@ -94,7 +103,7 @@ function Intro({
   scrolled,
 }) {
   return (
-    <IntroWrapper>
+    <IntroWrapper height={getWindowHeight()}>
       <Name>{name}</Name>
       <Quote>{title}</Quote>
       <Arrow scrolled={scrolled} onClick={letThePartyBegin}>
