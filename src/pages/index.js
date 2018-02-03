@@ -5,44 +5,19 @@ import Link, { navigateTo } from 'gatsby-link';
 
 import { scale } from '../utils/typography';
 
-import Icon from '../components/Icon';
+import Intro from '../components/Intro';
 import { media, colors } from '../utils/styles';
 
 const HomeWrapper = styled.div`
 
-  height: 100vh;
   width: 100vw;
   background: ${colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-  h1 {
-    ${{ ...scale(2.5) }}
-    ${media.phone`${{ ...scale(1.75) }}`}
-    text-align: center;
-  }
-  h2 {
-    ${{ ...scale(1.25) }}
-    ${media.phone`${{ ...scale(0.75) }}`}
-    text-align: center;
-  }
 
 `;
-
-const ToResume = styled(Link)`
-
-  text-shadow: none;
-  background-image: none;
-  ${{ ...scale(1) }}
-  padding-top: 24px;
-  cursor: pointer;
-  color: inherit;
-  display: flex;
-
-`;
-
 
 class IndexPage extends React.PureComponent {
   componentDidMount() {
@@ -50,16 +25,11 @@ class IndexPage extends React.PureComponent {
   }
   render() {
     const {
-      name, title,
-    } = this.props.data.profileJson;
+      profileJson,
+    } = this.props.data;
     return (
       <HomeWrapper>
-        <h1>{name}</h1>
-        <h2>{title}</h2>
-        {/*<ToResume to="/resume">*/}
-          {/*<Icon name="icon-drivers-license-o" size={2} />*/}
-          {/*<Icon name="icon-angle-right" />*/}
-        {/*</ToResume>*/}
+        <Intro {...profileJson} scrolled />
       </HomeWrapper>
     );
   }
