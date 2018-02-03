@@ -19,6 +19,13 @@ class TemplateWrapper extends React.PureComponent {
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
+            {
+              name: 'viewport',
+              content: 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, minimal-ui, viewport-fit=cover',
+            },
+            { name: 'msapplication-tap-highlight', content: 'no' },
+            { name: 'mobile-web-app-capable', content: 'yes' },
+            { name: 'apple-mobile-web-app-capable', content: 'yes' },
           ]}
         />
         {children()}

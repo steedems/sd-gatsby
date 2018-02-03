@@ -60,6 +60,7 @@ const Arrow = styled.div`
     position: absolute;
     bottom: 24px;
     left: 50%;
+    transform: translate(-50%, 0);
     animation: ${animationName} 2s infinite;
     cursor: pointer;
     
