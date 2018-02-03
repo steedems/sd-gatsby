@@ -21,7 +21,7 @@ const IntroWrapper = styled.div`
   
   padding: 24px 0; 
   
-  height: 100vh;
+  height: ${window ? `${window.innerHeight}px` : '100vh'};
   position: relative;
 
 `;
@@ -43,13 +43,13 @@ const Quote = styled.h2`
 
 const animationName = keyframes`
   0%, 20%, 50%, 80%, 100% {
-    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 	40% {
-    transform: translate(-50%, -30px);
+    transform: translate3d(-50%, -30px, 0);
   }
 	60% {
-    transform: translate(-50%, -15px);
+    transform: translate3d(-50%, -15px, 0);
   }
 `;
 
@@ -80,8 +80,8 @@ const Arrow = styled.div`
 
 const letThePartyBegin = () => {
   if (!window) return;
-  window.document.body.scrollBy({
-    top: window.document.body.offsetHeight,
+  window.scroll({
+    top: window.innerHeight,
     left: 0,
     behavior: 'smooth',
   });

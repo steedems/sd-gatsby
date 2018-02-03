@@ -98,9 +98,8 @@ class Resume extends React.PureComponent {
   }
   componentDidMount() {
     try {
-      window.document.body.addEventListener('scroll', () => {
-        const { scrollTop } = window.document.body;
-        this.setState({ scrolled: scrollTop > 0 });
+      window.addEventListener('scroll', () => {
+        this.setState({ scrolled: window.pageYOffset > 0 });
       });
     } catch (e) {
       console.log('body.addEventListener failed', e);
