@@ -19,6 +19,7 @@ const Skill = styled.div`
   flex: 0 0 50%;
   padding: 12px 0;
   align-items: center;
+  white-space: pre-wrap;
   
   &:nth-child(even) {
     padding-left: 24px;
@@ -29,12 +30,14 @@ const Skill = styled.div`
     ${media.phone`padding-right: 0;`}
   }
   
-  ${media.phone`flex: 1 1 100%;`}
+  ${media.phone`flex: 1 1 100%; flex-direction: column; white-space: inherit;`};
 
 `;
 const Label = styled.div`
 
   flex: 0 0 50%;
+  
+  ${media.phone`width: 100%; display: flex; flex: 1 1 auto;`};
 
 `;
 const Score = styled.div`
@@ -43,7 +46,6 @@ const Score = styled.div`
   display: flex;
   align-items: center;
   height: 8px;
-  // background: ${colors.primaryLight};
   border: solid 1px ${colors.highlight};
   &:after {
     content: '';
@@ -51,6 +53,8 @@ const Score = styled.div`
     height: 100%;
     background: ${colors.highlight};
   }
+  
+  ${media.phone`width: 100%; display: flex; flex: 1 1 auto;`};
 
 `;
 

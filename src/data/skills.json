@@ -1,16 +1,16 @@
 [
   {
     "label": "Javascript",
-    "level": 90,
+    "level": 85,
     "type": "tech"
   },
   {
-    "label": "NodeJS",
-    "level": 75,
+    "label": "NodeJS, Express",
+    "level": 65,
     "type": "tech"
   },
   {
-    "label": "ReactJS",
+    "label": "ReactJS, Redux",
     "level": 80,
     "type": "tech"
   },
@@ -20,58 +20,33 @@
     "type": "tech"
   },
   {
-    "label": "Ionic",
-    "level": 35,
+    "label": "redux-saga",
+    "level": 65,
     "type": "tech"
   },
   {
-    "label": "Redux",
+    "label": "styled-components",
     "level": 75,
     "type": "tech"
   },
   {
-    "label": "Saga",
-    "level": 65,
-    "type": "tech"
-  },
-  {
-    "label": "Java",
+    "label": "Java, PHP, Laravel",
     "level": 20,
     "type": "tech"
   },
   {
-    "label": "PHP",
-    "level": 20,
-    "type": "tech"
-  },
-  {
-    "label": "SCSS",
+    "label": "SCSS, Less",
     "level": 65,
     "type": "tech"
   },
   {
-    "label": "AngularJS",
+    "label": "AngularJS, Ionic",
     "level": 40,
-    "type": "tech"
-  },
-  {
-    "label": "Laravel Framework",
-    "level": 20,
     "type": "tech"
   },
   {
     "label": "SQL",
-    "level": 40,
-    "type": "tech"
-  },
-  {
-    "label": "Less",
-    "level": 70,
-    "type": "tech"
-  },
-  {
-    "label": "GraphQL",
-    "level": 25,
+    "level": 35,
     "type": "tech"
   },
   {
@@ -80,13 +55,13 @@
     "type": "tech"
   },
   {
-    "label": "Git",
-    "level": 80,
-    "type": "tool"
+    "label": "Jest, Enzyme",
+    "level": 60,
+    "type": "tech"
   },
   {
-    "label": "JetBrains (Webstorm)",
-    "level": 75,
+    "label": "Git, BitBucket",
+    "level": 80,
     "type": "tool"
   },
   {
@@ -95,23 +70,13 @@
     "type": "tool"
   },
   {
-    "label": "Jira",
+    "label": "Jira (Atlassian)",
     "level": 70,
     "type": "tool"
   },
   {
-    "label": "BitBucket",
-    "level": 75,
-    "type": "tool"
-  },
-  {
-    "label": "Adobe Photoshop",
+    "label": "Photoshop, Illustrator",
     "level": 25,
-    "type": "tool"
-  },
-  {
-    "label": "Adobe Illustrator",
-    "level": 30,
     "type": "tool"
   },
   {
