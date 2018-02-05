@@ -33,6 +33,11 @@ const ResumeWrapper = styled.div`
 
   min-height: 100vh;
   width: 100%;
+  
+  *::selection {
+    color: ${colors.highlight};
+    background-color: ${colors.primary};
+  }
 
 `;
 
