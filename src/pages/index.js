@@ -11,6 +11,7 @@ import { media, colors } from '../utils/styles';
 const HomeWrapper = styled.div`
 
   width: 100vw;
+  min-height: 100vh;
   background: ${colors.primary};
   display: flex;
   align-items: center;

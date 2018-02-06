@@ -21,6 +21,7 @@ const IntroWrapper = styled.div`
   
   padding: 24px 0; 
   
+  height: 100vh; // weird fix for computed height
   height: ${props => props.height};
   position: relative;
 
