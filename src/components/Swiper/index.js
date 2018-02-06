@@ -5,21 +5,11 @@
 /* eslint-disable react/no-array-index-key*/
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import SwiperJS from 'swiper/dist/js/swiper';
 import 'swiper/dist/css/swiper.min.css';
 
 import Pagination from './Pagination';
-
-const SliderContainer = styled.div`
-
-  .swiper-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-`;
-const SliderWrapper = styled.div``;
+import { SliderContainer, SliderWrapper } from './styleds';
 
 class Slider extends React.PureComponent {
   constructor(props) {

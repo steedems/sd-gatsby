@@ -4,33 +4,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import {colors} from '../../utils/styles';
 
-
-const PaginationWrapper = styled.div`
-
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-
-`;
-const DOT_SIZE = '4px';
-const DOT_ACTIVE = '8px';
-const PaginationDot = styled.div`
-
-  height: ${props => (props.active ? DOT_ACTIVE : DOT_SIZE)};
-  width: ${props => (props.active ? DOT_ACTIVE : DOT_SIZE)};
-  transition: all .3s ease-in-out;
-  margin: 4px;
-  border-radius: 50%;
-  background: ${props => (props.active ? colors.highlight : colors.primaryDark)};
-
-`;
-
+import { PaginationDot, PaginationWrapper } from './styleds';
 
 class Pagination extends React.PureComponent {
   render() {
