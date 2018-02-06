@@ -124,7 +124,7 @@ class Resume extends React.PureComponent {
           <Intro {...profileJson} scrolled={this.state.scrolled} />
         </SectionWrapper>
         <SectionWrapper>
-          <Section title="experience">
+          <Section title="work experience">
             {careers.map((edge, index) => <Experience key={index} {...edge.node} />)}
           </Section>
         </SectionWrapper>
