@@ -4,7 +4,6 @@
 
 import React from 'react';
 import PropType from 'prop-types';
-import styled from 'styled-components';
 import AnimateHeight from 'react-animate-height';
 
 import uniq from 'lodash/uniq';
@@ -12,106 +11,27 @@ import uniq from 'lodash/uniq';
 import Icon from '../Icon';
 import Projects from '../Projects';
 
-import { scale, rhythm } from '../../utils/typography';
-import { media, colors } from '../../utils/styles';
+import {
+  ExperienceWrapper,
+  Title,
+  Head,
+  Company,
+  Description,
+  ProjectsButton,
+  Techs,
+  TechsTitle,
+  ANIMATION_DURATION,
+} from './styleds';
 
-const ANIMATION_DURATION = 750;
-
-const ExperienceWrapper = styled.div`
-  padding: 24px 0;
-`;
-const Head = styled.div`
-
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 24px;
-  ${media.phone`
-    flex-direction: column;
-    align-items: flex-start;
-  `}
-
-  
-
-`;
-const Title = styled.h2`
-
-  margin: 0;
-  margin-right: 24px;
-  font-size: ${rhythm(1.5)};
-  line-height: ${rhythm(1.5)};
-
-`;
-const Company = styled.div`
-
-  font-size: ${rhythm(1)};
-  line-height: ${rhythm(1)};
-
-`;
-const SubTitle = styled.div`
-  display: flex;
-  align-items: center;
-  ${media.phone`
-    flex-direction: column;
-    align-items: flex-start;
-  `}
-`;
-const Duration = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Date = styled.div`
-  
-  padding-right: 12px;
-
-`;
-
-const Location = styled.div`
-
-  display: flex;
-  align-items: center;
-
-`;
-const Techs = styled.div`
-
-  padding-bottom: 24px;
-  text-align: justify;
-`;
-
-const TechsTitle = styled.div`
-
-  display: flex;
-  align-items: center;
-
-`;
-const Description = styled.div`
-  padding: 24px 0;
-  white-space: pre-line;
-  text-align: justify;
-`;
-
-const ProjectsButton = styled.div`
-  font-weight: 800;
-  font-size: ${rhythm(0.8)};
-  line-height: ${rhythm(0.8)};
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  cursor: pointer;
-  color: ${colors.bodyColor};
-  
-  .projects-icon {
-    transition: all ${ANIMATION_DURATION}ms;
-    transform: rotate(${props => (props.showProjects ? 180 : 0)}deg);
-    padding: 12px;
-  }
-`;
+import WhenAndWhere from '../WhenAndWhere';
 
 class Experience extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       showProjects: false,
-      techs: uniq(props.projects.reduce((accumulator, value) => accumulator.concat(value.technologies), props.techs)),
+      techs: uniq(props.projects.reduce((accumulator, value) =>
+        accumulator.concat(value.technologies), props.techs)),
     };
     this.toggleProjects = this.toggleProjects.bind(this);
   }
@@ -138,15 +58,7 @@ class Experience extends React.PureComponent {
           <Title>{title}</Title>
           <Company>{company}</Company>
         </Head>
-        <SubTitle>
-          <Duration>
-            <Icon name="icon-calendar" />
-            <Date>{startDate}</Date>
-            <Date>-</Date>
-            <Date>{endDate || 'Present'}</Date>
-          </Duration>
-          <Location><Icon name="icon-map-marker" />{location}</Location>
-        </SubTitle>
+        <WhenAndWhere startDate={startDate} endDate={endDate} location={location} />
         <Description>
           {description}
         </Description>
@@ -164,11 +76,10 @@ class Experience extends React.PureComponent {
           }
         </AnimateHeight>
         <ProjectsButton onClick={this.toggleProjects} showProjects={showProjects}>
-          projects <Icon size={.75} className="projects-icon" name="icon-chevron-down" />
+          projects <Icon size={0.75} className="projects-icon" name="icon-chevron-down" />
         </ProjectsButton>
         <AnimateHeight
           duration={ANIMATION_DURATION}
-          // height={'auto'}
           height={showProjects ? 'auto' : 0}
           style={{ overflow: 'auto' }}
         >
@@ -185,9 +96,9 @@ Experience.propTypes = {
   startDate: PropType.string,
   endDate: PropType.string,
   location: PropType.string,
-  activities: PropType.array,
   techs: PropType.array,
   projects: PropType.array,
+  description: PropType.string,
 };
 
 export default Experience;

@@ -3,22 +3,9 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { scale } from '../../utils/typography';
-
-const SectionWrapper = styled.div``;
-const Title = styled.div`
-
-  display: block;
-  ${{ ...scale(1.5) }}
-  padding-top: 24px;
-  margin-bottom: 24px;
-  width: 100%;
-  text-align: right;
-  border-bottom: solid 1px rgba(64,64,64,1);
-
-`;
+import { SectionWrapper, Title } from './styleds';
 
 function Section({ title, children }) {
   return (
@@ -28,5 +15,10 @@ function Section({ title, children }) {
     </SectionWrapper>
   );
 }
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.array,
+};
 
 export default Section;

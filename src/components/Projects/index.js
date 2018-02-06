@@ -4,46 +4,11 @@
 
 import React from 'react';
 import PropType from 'prop-types';
-import styled from 'styled-components';
 
 import Swiper from '../Swiper';
 
 import Icon from '../Icon';
-import { rhythm } from '../../utils/typography';
-import { colors, media } from '../../utils/styles';
-
-const ProjectsWrapper = styled.div``;
-const Project = styled.div`
-
-  padding: 24px;
-  border-radius: 3px;
-  border: solid 1px ${colors.highlight};
-
-`;
-const Client = styled.div`
-
-  display: flex;
-  align-items: center;
-  font-size: ${rhythm(0.8)};
-  line-height: ${rhythm(0.8)};
-
-`;
-const Description = styled.div`
-
-  display: flex;
-  align-items: center;
-  white-space: pre-line;
-  text-align: justify;
-  ${media.phone`padding: 12px 0;`};
-  
-`;
-const Techs = styled.div`
-
-  display: flex;
-  align-items: center;
-  text-align: justify;
-
-`;
+import { ProjectsWrapper, Project, Client, Description, Techs } from './styleds';
 
 function Projects({ list }) {
   return (

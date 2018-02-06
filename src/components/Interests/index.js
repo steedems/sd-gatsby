@@ -4,46 +4,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { media } from '../../utils/styles';
 
-import Icon from '../Icon';
-import { scale } from '../../utils/typography';
-
-const InterestsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 24px;
-  flex-wrap: wrap;
-`;
-const Interest = styled.div`
-  flex: 1;
-  ${media.phone`flex: 1 1 50%; padding: 12px;`};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-const InterestIcon = styled.div`
-
-  padding: 8px;
-  font-size: 2rem;
-  line-height: 2rem;
-  display: flex;
-  align-items: center;
-  opacity: .9;
-  filter: grayscale(.3);
-
-`;
-const InterestName = styled.div``;
+import { InterestsWrapper, Interest, InterestIcon, InterestName } from './styleds';
 
 function Interests({ list }) {
   return (
     <InterestsWrapper>
       {list.map(interest => (
         <Interest key={interest.node.name}>
-          {/* <InterestIcon size={3} name={`icon-${interest.node.icon}`} /> */}
           <InterestIcon>{interest.node.icon}</InterestIcon>
           <InterestName>{interest.node.name}</InterestName>
         </Interest>))}
@@ -51,7 +19,7 @@ function Interests({ list }) {
   );
 }
 
-Interest.propTypes = {
+Interests.propTypes = {
   list: PropTypes.array,
 };
 

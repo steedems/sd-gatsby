@@ -4,18 +4,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import { colors } from '../../utils/styles';
-
-const IconWrapper = styled.div`
-
-  font-size: ${props => props.size}rem;
-  padding: 12px 12px 12px 0;
-  cursor: ${props => (props.onClick ? 'pointer' : '')};
-  color: ${colors.highlight};
-
-`;
+import { IconWrapper } from './styleds';
 
 function Icon({
   size, name, onClick, className,

@@ -11,7 +11,7 @@
       "management of iOS and Android releases",
       "REST APIs development and implementation"
     ],
-    "techs": ["ReactJS", "Redux", "redux-saga", "styled-components", "Cordova", "Webpack", "NodeJS", "ExpressJS", "SCSS", "Jest", "Electron", "AngularJS", "Ionic"],
+    "techs": ["ReactJS", "Redux", "redux-saga", "styled-components", "Cordova", "Webpack", "NodeJS", "ExpressJS", "SCSS", "Jest", "Enzyme", "Electron", "AngularJS", "Ionic"],
     "projects": [
       {
         "industry": "Automotive",
