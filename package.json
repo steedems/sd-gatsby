@@ -9,9 +9,16 @@
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-styled-components": "^2.0.4",
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-source-filesystem": "^1.5.14",
+    "gatsby-transformer-json": "^1.0.14",
+    "lodash": "^4.17.4",
+    "react-animate-height": "^0.10.9",
     "react-helmet": "^5.2.0",
     "serve-static": "^1.13.1",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "swiper": "^4.1.0",
+    "typography-theme-fairy-gates": "^0.15.11"
   },
   "keywords": [
     "gatsby"
@@ -20,7 +27,8 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "npm run clearCache && gatsby develop",
+    "clearCache": "rm -rf ./.cache",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

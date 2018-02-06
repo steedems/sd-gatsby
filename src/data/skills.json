@@ -1,0 +1,97 @@
+[
+  {
+    "label": "Javascript",
+    "level": 85,
+    "type": "tech"
+  },
+  {
+    "label": "NodeJS, Express",
+    "level": 65,
+    "type": "tech"
+  },
+  {
+    "label": "ReactJS, Redux",
+    "level": 80,
+    "type": "tech"
+  },
+  {
+    "label": "Cordova",
+    "level": 80,
+    "type": "tech"
+  },
+  {
+    "label": "redux-saga",
+    "level": 65,
+    "type": "tech"
+  },
+  {
+    "label": "styled-components",
+    "level": 75,
+    "type": "tech"
+  },
+  {
+    "label": "Java, PHP, Laravel",
+    "level": 20,
+    "type": "tech"
+  },
+  {
+    "label": "SCSS, Less",
+    "level": 65,
+    "type": "tech"
+  },
+  {
+    "label": "AngularJS, Ionic",
+    "level": 40,
+    "type": "tech"
+  },
+  {
+    "label": "SQL",
+    "level": 35,
+    "type": "tech"
+  },
+  {
+    "label": "Webpack",
+    "level": 60,
+    "type": "tech"
+  },
+  {
+    "label": "Jest, Enzyme",
+    "level": 60,
+    "type": "tech"
+  },
+  {
+    "label": "Git, BitBucket",
+    "level": 80,
+    "type": "tool"
+  },
+  {
+    "label": "Xcode",
+    "level": 65,
+    "type": "tool"
+  },
+  {
+    "label": "Jira (Atlassian)",
+    "level": 70,
+    "type": "tool"
+  },
+  {
+    "label": "Photoshop, Illustrator",
+    "level": 25,
+    "type": "tool"
+  },
+  {
+    "label": "Italian (Native)",
+    "level": 100,
+    "type": "language"
+  },
+  {
+    "label": "English",
+    "level": 85,
+    "type": "language"
+  },
+  {
+    "label": "Spanish",
+    "level": 20,
+    "type": "language"
+  }
+]

@@ -1,63 +1,54 @@
 import React from 'react';
-
+import PropType from 'prop-types';
 import styled from 'styled-components';
+import Link, { navigateTo } from 'gatsby-link';
 
-function open(link, target = '_blank') {
-  return window.open(link, target);
-}
+import { scale } from '../utils/typography';
 
-import Icon from '../components/Icon';
+import Intro from '../components/Intro';
+import { media, colors } from '../utils/styles';
 
 const HomeWrapper = styled.div`
 
-  height: 100vh;
   width: 100vw;
-  background: lightblue;
+  min-height: 100vh;
+  background: ${colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-  h1 {
-    font-size: 5rem;
-    font-weight: 400;
-    text-align: center;
-  }
-  h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    font-style: italic;
-    text-align: center;
-  }
 
 `;
 
-const Links = styled.div`
-
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
+class IndexPage extends React.PureComponent {
+  componentDidMount() {
+    navigateTo('/resume');
   }
+  render() {
+    const {
+      profileJson,
+    } = this.props.data;
+    return (
+      <HomeWrapper>
+        <Intro {...profileJson} scrolled />
+      </HomeWrapper>
+    );
+  }
+}
 
-`;
-
-const IndexPage = () => (
-  <HomeWrapper>
-    <h1>stefano demurtas</h1>
-    <h2>developer and sea lover <span role="img">⛵</span></h2>
-    <Links>
-      <Icon onClick={() => open('https://www.linkedin.com/in/stefanodemurtas')} name="icon-linkedin" size={2} />
-      <Icon onClick={() => open('https://twitter.com/steedems')} name="icon-twitter" size={2} />
-      <Icon onClick={() => open('https://github.com/steedems')} name="icon-github" size={2} />
-      <Icon onClick={() => open('mailto:st.demurtas@gmail.com?Subject=Hi there!', '_top')} name="icon-envelope-o" size={2} />
-    </Links>
-  </HomeWrapper>
-);
+IndexPage.propTypes = {
+  data: PropType.object,
+};
 
 
 export default IndexPage;
+
+
+export const pageQuery = graphql`
+  query IndexPage {
+    profileJson {
+      name
+      title
+    } 
+  }
+`;

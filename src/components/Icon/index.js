@@ -4,21 +4,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const IconWrapper = styled.div`
+import { IconWrapper } from './styleds';
 
-  font-size: ${props => props.size}rem;
-  
-  margin: 12px;
-  
-  cursor: ${props => (props.onClick ? 'pointer' : 'initial')}
-
-`;
-
-function Icon({ size, name, onClick }) {
+function Icon({
+  size, name, onClick, className,
+}) {
   return (
-    <IconWrapper onClick={onClick} size={size}><i className={name} /></IconWrapper>
+    <IconWrapper onClick={onClick} size={size} className={className}>
+      <i className={name} />
+    </IconWrapper>
   );
 }
 
@@ -26,6 +21,7 @@ Icon.propTypes = {
   size: PropTypes.number,
   name: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Icon;
