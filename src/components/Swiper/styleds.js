@@ -9,7 +9,9 @@ const PAGINATION_HEIGHT = '48px';
 
 export const SliderContainer = styled.div`
 
-   padding-bottom: ${PAGINATION_HEIGHT};
+   &.swiper-container {
+     padding-bottom: ${PAGINATION_HEIGHT};
+   }
 
   .swiper-wrapper {
     display: flex;
