@@ -5,5 +5,5 @@ For an overview of the project structure please refer to the [Gatsby documentati
 
 Run
 ```
-npm run start
+npm run develop
 ```
