@@ -18,7 +18,7 @@ function Section({ title, children }) {
 
 Section.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Section;

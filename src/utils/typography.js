@@ -7,7 +7,9 @@ import fairyGates from 'typography-theme-fairy-gates';
 
 import { colors } from './styles';
 
-fairyGates.overrideThemeStyles = ({ rhythm }, options) => ({
+import '../assets/font-awesome/style.css';
+
+fairyGates.overrideThemeStyles = () => ({
   a: {
     textDecoration: 'none',
     textShadow: 'none',
@@ -56,6 +58,4 @@ const theme = Object.assign({}, fairyGates, {
   },
 });
 
-const typography = new Typography(theme);
-
-export default typography;
+export default new Typography(theme);

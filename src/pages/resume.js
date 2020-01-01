@@ -15,7 +15,7 @@ import Interests from '../components/Interests';
 import Icon from '../components/Icon';
 
 import { media, colors } from '../utils/styles';
-import { rhythm } from '../utils/typography';
+import typography from '../utils/typography';
 
 function open(link, target = '_blank') {
   return window.open(link, target);
@@ -33,7 +33,7 @@ const ResumeWrapper = styled.div`
 
   min-height: 100vh;
   width: 100%;
-  
+
   *::selection {
     color: ${colors.highlight};
     background-color: ${colors.primary};
@@ -45,11 +45,11 @@ const SectionWrapper = styled.div`
 
   ${pagePadding()};
   background: ${colors.primaryLight};
-  
+
   &:first-child {
     background: ${colors.primary};
   }
-  
+
 `;
 
 const ContactsWrapper = styled(SectionWrapper)`
@@ -57,7 +57,7 @@ const ContactsWrapper = styled(SectionWrapper)`
   background: ${colors.primary};
 
   padding-bottom: 24px;
-      
+
 `;
 
 const Links = styled.div`
@@ -65,7 +65,7 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  
+
   a {
     text-decoration: none;
     cursor: pointer;
@@ -82,8 +82,8 @@ const Email = styled.div`
 const Phone = styled.div`
 
   cursor: pointer;
-  font-size: ${rhythm(0.6)};
-  // line-height: ${rhythm(0.5)};
+  font-size: ${typography.rhythm(0.6)};
+  // line-height: ${typography.rhythm(0.5)};
 
 `;
 
@@ -188,7 +188,7 @@ export const pageQuery = graphql`
       github
       email
       phone
-    } 
+    }
     allExperienceJson {
       edges {
         node {

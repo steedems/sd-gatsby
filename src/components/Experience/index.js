@@ -30,8 +30,7 @@ class Experience extends React.PureComponent {
     super(props);
     this.state = {
       showProjects: false,
-      techs: uniq(props.projects.reduce((accumulator, value) =>
-        accumulator.concat(value.technologies), props.techs)),
+      techs: uniq(props.projects.reduce((accumulator, value) => accumulator.concat(value.technologies), props.techs)),
     };
     this.toggleProjects = this.toggleProjects.bind(this);
   }
@@ -66,25 +65,37 @@ class Experience extends React.PureComponent {
           duration={ANIMATION_DURATION}
           height={!showProjects ? 'auto' : 0}
         >
-          {techs &&
+          {techs
+            && (
             <Techs>
               <TechsTitle>
-                <Icon name="icon-wrench" /> Some of the technologies used:
+                <Icon name="icon-wrench" />
+                {' '}
+Some of the technologies used:
               </TechsTitle>
-              {techs.join(', ')}.
+              {techs.join(', ')}
+.
             </Techs>
-          }
+            )}
         </AnimateHeight>
-        <ProjectsButton onClick={this.toggleProjects} showProjects={showProjects}>
-          projects <Icon size={0.75} className="projects-icon" name="icon-chevron-down" />
-        </ProjectsButton>
-        <AnimateHeight
-          duration={ANIMATION_DURATION}
-          height={showProjects ? 'auto' : 0}
-          style={{ overflow: 'auto' }}
-        >
-          <Projects list={projects} />
-        </AnimateHeight>
+        {
+          projects && !!projects.length && (
+            <>
+              <ProjectsButton onClick={this.toggleProjects} showProjects={showProjects}>
+              projects
+                {' '}
+                <Icon size={0.75} className="projects-icon" name="icon-chevron-down" />
+              </ProjectsButton>
+              <AnimateHeight
+                duration={ANIMATION_DURATION}
+                height={showProjects ? 'auto' : 0}
+                style={{ overflow: 'auto' }}
+              >
+                <Projects list={projects} />
+              </AnimateHeight>
+            </>
+          )
+        }
       </ExperienceWrapper>
     );
   }

@@ -1,9 +1,9 @@
 [
   {
-    "title": "Frontent Developer",
+    "title": "Frontend Developer",
     "company": "Zopa Ltd",
     "startDate": "2018-05-14",
-    "endDate": "",
+    "endDate": null,
     "location": "Barcelona, Spain",
     "description": "Helping Zopa build the next generation bank!",
     "techs": ["ReactJS", "React Native", "NodeJS", "styled-components", "Redux", "GatsbyJS", "..."],

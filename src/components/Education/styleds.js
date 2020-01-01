@@ -4,7 +4,7 @@
 
 import styled from 'styled-components';
 import { media } from '../../utils/styles';
-import { rhythm } from '../../utils/typography';
+import typography from '../../utils/typography';
 
 export const EducationWrapper = styled.div`
 
@@ -21,21 +21,21 @@ export const Head = styled.div`
     align-items: flex-start;
   `}
 
-  
+
 
 `;
 export const Title = styled.h2`
 
   margin: 0;
   margin-right: 24px;
-  font-size: ${rhythm(1)};
-  line-height: ${rhythm(1)};
+  font-size: ${typography.rhythm(1)};
+  line-height: ${typography.rhythm(1)};
   padding-bottom: 12px;
 
 `;
 export const School = styled.div`
 
-  font-size: ${rhythm(0.75)};
-  line-height: ${rhythm(0.75)};
+  font-size: ${typography.rhythm(0.75)};
+  line-height: ${typography.rhythm(0.75)};
 
 `;

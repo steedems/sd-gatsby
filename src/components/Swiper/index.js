@@ -2,11 +2,11 @@
  * Created by Stefano Demurtas on 31/01/2018.
  */
 
-/* eslint-disable react/no-array-index-key*/
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
-import SwiperJS from 'swiper/dist/js/swiper';
-import 'swiper/dist/css/swiper.min.css';
+import SwiperJS from 'swiper';
+import 'swiper/css/swiper.css';
 
 import Pagination from './Pagination';
 import { SliderContainer, SliderWrapper } from './styleds';
@@ -67,7 +67,7 @@ class Slider extends React.PureComponent {
     return (
       <SliderContainer
         className="swiper-container"
-        innerRef={shouldSlide ? this.swiperRef : null}
+        ref={shouldSlide ? this.swiperRef : null}
       >
         {shouldSlide ? (
           <SliderWrapper className="swiper-wrapper" index={index}>

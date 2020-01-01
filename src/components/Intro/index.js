@@ -48,7 +48,7 @@ function Intro({
 Intro.propTypes = {
   name: PropType.string,
   title: PropType.string,
-  scrolled: PropType.string,
+  scrolled: PropType.bool,
 };
 
 export default Intro;

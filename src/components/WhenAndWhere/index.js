@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import PropType from 'prop-types';
 
 import { WhenAndWhereWrapper, Duration, Date, Location } from './styleds';
 

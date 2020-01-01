@@ -4,7 +4,7 @@
  */
 
 import styled from 'styled-components';
-import {media} from "../../utils/styles";
+import { media } from '../../utils/styles';
 
 export const WhenAndWhereWrapper = styled.div`
 
@@ -22,7 +22,7 @@ export const Duration = styled.div`
   align-items: center;
 `;
 export const Date = styled.div`
-  
+
   padding-right: 12px;
 
 `;

@@ -4,7 +4,6 @@
 
 import styled from 'styled-components';
 import { media } from '../../utils/styles';
-import { scale } from '../../utils/typography';
 
 export const InterestsWrapper = styled.div`
   display: flex;

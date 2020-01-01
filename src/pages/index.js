@@ -1,12 +1,10 @@
 import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
-import Link, { navigateTo } from 'gatsby-link';
-
-import { scale } from '../utils/typography';
+import { navigateTo } from 'gatsby-link';
 
 import Intro from '../components/Intro';
-import { media, colors } from '../utils/styles';
+import { colors } from '../utils/styles';
 
 const HomeWrapper = styled.div`
 
@@ -49,6 +47,6 @@ export const pageQuery = graphql`
     profileJson {
       name
       title
-    } 
+    }
   }
 `;

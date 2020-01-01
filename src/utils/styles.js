@@ -13,7 +13,7 @@ const sizes = {
 };
 
 // iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((accumulator, label) => {
+export const media = Object.keys(sizes).reduce((accumulator, label) => {
   const emSize = sizes[label] / 16;
   accumulator[label] = (...args) => css`
     @media (max-width: ${emSize}em) {
@@ -33,7 +33,7 @@ const media = Object.keys(sizes).reduce((accumulator, label) => {
 //   bodyColor: 'rgba(64,64,64,.9)',
 // };
 
-const colors = {
+export const colors = {
   primaryDark: '#70848F',
   primary: '#F5FAFC',
   primaryLight: '#FFFEFC',

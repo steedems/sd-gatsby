@@ -4,13 +4,13 @@
 
 import styled from 'styled-components';
 
-import { scale } from '../../utils/typography';
+import typography from '../../utils/typography';
 
 export const SectionWrapper = styled.div``;
 export const Title = styled.div`
 
   display: block;
-  ${{ ...scale(1.5) }}
+  ${{ ...typography.scale(1.5) }}
   padding-top: 24px;
   margin-bottom: 24px;
   width: 100%;
