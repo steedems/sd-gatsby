@@ -2,6 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
 import { navigateTo } from 'gatsby-link';
+import { graphql } from 'gatsby';
 
 import Intro from '../components/Intro';
 import { colors } from '../utils/styles';

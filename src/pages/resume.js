@@ -5,6 +5,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import styled, { css } from 'styled-components';
+import { graphql } from 'gatsby';
 
 import Experience from '../components/Experience';
 import Education from '../components/Education';
